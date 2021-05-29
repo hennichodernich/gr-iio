@@ -41,6 +41,11 @@ list(APPEND iio_sources
 	fmcomms2_sink_impl.cc
 	fmcomms5_source_impl.cc
 	fmcomms5_sink_impl.cc
+	multi_source_impl.cc
+	flexi_source_impl.cc
+	hnchboard2_source_impl.cc
+	hnchboard2u_source_impl.cc
+	hnchbbboard_source_impl.cc
 	pluto_source_impl.cc
 	pluto_sink_impl.cc
 	attr_sink_impl.cc

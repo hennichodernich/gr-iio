@@ -25,6 +25,9 @@ install(FILES
 	device_source.h device_sink.h
 	fmcomms2_source.h fmcomms2_sink.h
 	fmcomms5_source.h fmcomms5_sink.h
+	hnchboard2_source.h hnchboard2u_source.h 
+	hnchbbboard_source.h
+	multi_source.h flexi_source.h
 	pluto_source.h pluto_sink.h
 	converter_ss.h math.h power_ff.h
 	attr_sink.h

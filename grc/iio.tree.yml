@@ -13,3 +13,7 @@
 - 'PlutoSDR':
   - iio_pluto_source
   - iio_pluto_sink
+- 'hnchBoard2 Variants':
+  - iio_hnchboard2_source
+  - iio_hnchboard2u_source
+  - iio_hnchbbboard_source

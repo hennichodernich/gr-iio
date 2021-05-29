@@ -7,6 +7,11 @@
 %{
 #include "iio/device_source.h"
 #include "iio/device_sink.h"
+#include "iio/multi_source.h"
+#include "iio/flexi_source.h"
+#include "iio/hnchboard2_source.h"
+#include "iio/hnchboard2u_source.h"
+#include "iio/hnchbbboard_source.h"
 #include "iio/fmcomms2_source.h"
 #include "iio/fmcomms2_sink.h"
 #include "iio/fmcomms5_source.h"
@@ -21,6 +26,11 @@
 
 %include "iio/device_source.h"
 %include "iio/device_sink.h"
+%include "iio/multi_source.h"
+%include "iio/flexi_source.h"
+%include "iio/hnchboard2_source.h"
+%include "iio/hnchboard2u_source.h"
+%include "iio/hnchbbboard_source.h"
 %include "iio/fmcomms2_source.h"
 %include "iio/fmcomms2_sink.h"
 %include "iio/fmcomms5_source.h"
@@ -34,6 +44,14 @@
 
 GR_SWIG_BLOCK_MAGIC2(iio, device_source);
 GR_SWIG_BLOCK_MAGIC2(iio, device_sink);
+GR_SWIG_BLOCK_MAGIC2(iio, multi_source);
+GR_SWIG_BLOCK_MAGIC2(iio, flexi_source);
+GR_SWIG_BLOCK_MAGIC2(iio, hnchboard2_source);
+GR_SWIG_BLOCK_MAGIC2(iio, hnchboard2_source_f32c);
+GR_SWIG_BLOCK_MAGIC2(iio, hnchboard2u_source);
+GR_SWIG_BLOCK_MAGIC2(iio, hnchboard2u_source_f32c);
+GR_SWIG_BLOCK_MAGIC2(iio, hnchbbboard_source);
+GR_SWIG_BLOCK_MAGIC2(iio, hnchbbboard_source_f32c);
 GR_SWIG_BLOCK_MAGIC2(iio, fmcomms2_source);
 GR_SWIG_BLOCK_MAGIC2(iio, fmcomms2_source_f32c);
 GR_SWIG_BLOCK_MAGIC2(iio, fmcomms2_sink);

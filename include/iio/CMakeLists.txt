@@ -11,6 +11,26 @@
 ########################################################################
 install(FILES
     api.h
+    attr_sink.h
+    attr_source.h
+    device_sink.h
     device_source.h
-    device_sink.h DESTINATION include/iio
+    eightbit_sink.h
+    eightbit_source.h
+    flexi_source.h
+    fmcomms2_sink.h
+    fmcomms2_source.h
+    fmcomms5_sink.h
+    fmcomms5_source.h
+    hnchbbboard_source.h
+    hnchboard2_source.h
+    hnchboard2u_source.h
+    multi_source.h
+    pluto_sink.h
+    pluto_source.h
+    converter_ss.h
+    math.h
+    modulo_const_ff.h
+    modulo_ff.h
+    power_ff.h DESTINATION include/iio
 )

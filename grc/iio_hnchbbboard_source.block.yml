@@ -1,0 +1,51 @@
+id: iio_hnchbbboard_source
+label: hnchBoard2 in BB only configuration
+flags: [ python, throttle ]
+
+parameters:
+-   id: uri
+    label: IIO context URI
+    dtype: string
+    default: 'local:'
+
+-   id: frequency
+    label: Mixer Frequency
+    dtype: int
+    default: 5000000
+
+-   id: samplerate
+    label: Sample Rate
+    dtype: int
+    default: 5000000
+
+-   id: buffer_size
+    label: Buffer size
+    dtype: int
+    default: 0x8000
+
+-   id: stream_id
+    label: Stream Select
+    dtype: int
+    default: 0
+
+-   id: gain_value
+    label: Gain (dB)
+    dtype: float
+    default: 4.5    
+
+outputs:
+-   domain: stream
+    dtype: complex
+    multiplicity: ${ 2 if (stream_id==3) else 1 }
+
+asserts:
+- ${ ((samplerate<=40000000) and (samplerate>=500000)) }
+- ${ ((frequency<=35000000) and (frequency>=0)) }
+
+templates:
+    imports: import iio
+    make: iio.hnchbbboard_source_f32c(${uri}, ${frequency}, ${samplerate}, ${stream_id}, ${buffer_size}, ${gain_value})
+    callbacks:
+      - set_params(${frequency}, ${samplerate}, ${gain_value})
+
+file_format: 1

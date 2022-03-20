@@ -1,0 +1,44 @@
+id: iio_hnchboard2u_source
+label: hnchBoard2U Source
+flags: [ python, throttle ]
+
+parameters:
+-   id: uri
+    label: IIO context URI
+    dtype: string
+    default: ''
+
+-   id: frequency
+    label: LO Frequency
+    dtype: int
+    default: 2440000000
+
+-   id: samplerate
+    label: Sample Rate
+    dtype: int
+    default: 5000000
+    
+-   id: gain_value
+    label: Gain
+    dtype: float
+    default: 4.5
+
+-   id: buffer_size
+    label: Buffer size
+    dtype: int
+    default: 0x8000
+
+outputs:
+-   domain: stream
+    dtype: complex
+
+asserts:
+- ${ ((samplerate<=40000000) and (samplerate>=500000)) }
+
+templates:
+    imports: import iio
+    make: iio.hnchboard2u_source_f32c(${uri}, ${samplerate}, ${frequency}, ${gain_value}, ${buffer_size})
+    callbacks:
+      - set_params(${samplerate}, ${frequency}, ${gain_value})
+
+file_format: 1

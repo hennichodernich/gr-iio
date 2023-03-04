@@ -34,17 +34,17 @@ namespace gr {
 
     attr_sink::sptr
     attr_sink::make(const std::string &uri, const std::string &device,
-      const std::string &channel, int type, bool output, bool required_enable)
+      const std::string &channel, int type, bool output, bool required_enable, bool retry)
     {
       return gnuradio::get_initial_sptr
-        (new attr_sink_impl(uri, device, channel, type, output, required_enable));
+        (new attr_sink_impl(uri, device, channel, type, output, required_enable, retry));
     }
 
     /*
      * The private constructor
      */
     attr_sink_impl::attr_sink_impl(const std::string &uri, const std::string &device,
-                                   const std::string &channel, int type, bool output, bool required_enable)
+                                   const std::string &channel, int type, bool output, bool required_enable, bool retry)
       : gr::block("attr_sink",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(0, 0, 0)),
@@ -53,7 +53,8 @@ namespace gr {
       uri(uri),
       type(type),
       output(output),
-      required_enable(required_enable)
+      required_enable(required_enable),
+      retry(retry)
     {
 
       ctx = device_source_impl::get_context(uri);
@@ -148,7 +149,9 @@ namespace gr {
           char error[1024];
           sprintf(error, "Attribute write '%s' failed to %s:%s:%s\n", value.c_str(),
           device.c_str(), channel.c_str(), attribute.c_str());
-          throw std::runtime_error(error);
+          if (!retry) {
+            throw std::runtime_error(error);
+          }
         }
       }
     }

@@ -40,6 +40,7 @@ namespace gr {
       int type;
       bool output;
       bool required_enable;
+      bool retry;
 
      protected:
       struct iio_context *ctx;
@@ -48,7 +49,7 @@ namespace gr {
 
      public:
       attr_sink_impl(const std::string &uri, const std::string &device,
-        const std::string &channel, int type, bool output, bool required_enable);
+        const std::string &channel, int type, bool output, bool required_enable, bool retry);
       ~attr_sink_impl();
 
       void write_attribute(pmt::pmt_t pdu);

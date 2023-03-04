@@ -43,6 +43,7 @@ void bind_attr_sink(py::module& m)
            py::arg("type"),
            py::arg("output"),
            py::arg("required_enable"),
+           py::arg("retry"),
            D(attr_sink,make)
         )
         

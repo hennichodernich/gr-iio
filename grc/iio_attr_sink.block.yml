@@ -19,6 +19,11 @@ parameters:
     options: ['0', '1', '2', '3', '4']
     option_labels: ['Channel', 'Device', 'Device Buffer', 'Device Debug', 'Register']
 
+-   id: retry
+    label: Retry on Write Error
+    dtype: bool
+    default: False
+
 -   id: required_enable
     label: Required Enable
     dtype: bool
@@ -45,7 +50,7 @@ inputs:
 
 templates:
     imports: import iio
-    make: iio.attr_sink(${uri}, ${device}, ${channel}, ${attr_type}, ${output}, ${required_enable})
+    make: iio.attr_sink(${uri}, ${device}, ${channel}, ${attr_type}, ${output}, ${required_enable}, ${retry})
 
 documentation: https://wiki.analog.com/resources/tools-software/linux-software/gnuradio
 

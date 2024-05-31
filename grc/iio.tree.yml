@@ -5,6 +5,10 @@
   - iio_attr_source
   - iio_attr_sink
   - iio_attr_updater
+  - iio_eightbit_source
+  - iio_eightbit_sink
+  - iio_thirtytwobit_source
+  - iio_thirtytwobit_sink
 - 'FMComms':
   - iio_fmcomms2_source
   - iio_fmcomms2_sink

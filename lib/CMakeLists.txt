@@ -46,6 +46,8 @@ list(APPEND iio_sources
 	multi_source_impl.cc
 	pluto_sink_impl.cc
 	pluto_source_impl.cc
+	thirtytwobit_sink_impl.cc
+	thirtytwobit_source_impl.cc
 	${FLEX_lexer_OUTPUTS}
 	${BISON_parser_OUTPUTS}
 )

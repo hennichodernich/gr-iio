@@ -27,6 +27,8 @@ list(APPEND iio_python_files
     device_source_python.cc
     eightbit_sink_python.cc
     eightbit_source_python.cc
+    thirtytwobit_sink_python.cc
+    thirtytwobit_source_python.cc
     flexi_source_python.cc
     fmcomms2_sink_python.cc
     fmcomms2_source_python.cc

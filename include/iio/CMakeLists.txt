@@ -17,6 +17,8 @@ install(FILES
     device_source.h
     eightbit_sink.h
     eightbit_source.h
+    thirtytwobit_sink.h
+    thirtytwobit_source.h
     flexi_source.h
     fmcomms2_sink.h
     fmcomms2_source.h

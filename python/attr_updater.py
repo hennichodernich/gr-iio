@@ -52,6 +52,10 @@ class attr_updater(gr.basic_block):
         self.run = False
         self.lock.release()
         self.thread.join()
+    
+    def stop(self):
+        self.__del__()
+        return True
 
     def update_value(self, value):
         self.value = value

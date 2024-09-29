@@ -23,6 +23,7 @@ include(GrPybind)
 list(APPEND iio_python_files
     attr_sink_python.cc
     attr_source_python.cc
+    attr_updater_python.cc
     device_sink_python.cc
     device_source_python.cc
     eightbit_sink_python.cc

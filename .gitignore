@@ -2,3 +2,4 @@
 obj-*-linux-gnu
 *.swp
 build/
+*.pyc

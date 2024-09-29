@@ -25,6 +25,7 @@ bison_target(parser
 list(APPEND iio_sources
 	attr_sink_impl.cc
 	attr_source_impl.cc
+	attr_updater_impl.cc
 	converter_ss_impl.cc
 	device_sink_impl.cc
 	device_source_impl.cc

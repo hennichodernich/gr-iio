@@ -13,6 +13,7 @@ install(FILES
     api.h
     attr_sink.h
     attr_source.h
+    attr_updater.h
     device_sink.h
     device_source.h
     eightbit_sink.h

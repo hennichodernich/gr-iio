@@ -22,4 +22,3 @@ except ModuleNotFoundError:
 # import any pure python here
 #
 
-from .attr_updater import attr_updater

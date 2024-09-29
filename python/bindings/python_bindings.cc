@@ -23,6 +23,7 @@ namespace py = pybind11;
 // BINDING_FUNCTION_PROTOTYPES(
 void bind_attr_sink(py::module& m);
 void bind_attr_source(py::module& m);
+void bind_attr_updater(py::module& m);
 void bind_device_sink(py::module& m);
 void bind_device_source(py::module& m);
 void bind_eightbit_sink(py::module& m);
@@ -70,6 +71,7 @@ PYBIND11_MODULE(iio_python, m)
     // BINDING_FUNCTION_CALLS(
 bind_attr_sink(m);
 bind_attr_source(m);
+bind_attr_updater(m);
 bind_device_sink(m);
 bind_device_source(m);
 bind_eightbit_sink(m);
